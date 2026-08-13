@@ -33,11 +33,11 @@ jobs:
           docker compose build badminton
           docker compose up -d badminton
 
-      - name: Health check (127.0.0.1:5080)
+      - name: Health check (127.0.0.1:5080/healthz)
         run: |
           set -e
           for i in $(seq 1 20); do
-            if curl -sf -o /dev/null http://127.0.0.1:5080/; then
+            if curl -sf -o /dev/null http://127.0.0.1:5080/healthz; then
               echo "OK sau ${i} lan thu"; exit 0
             fi
             sleep 2

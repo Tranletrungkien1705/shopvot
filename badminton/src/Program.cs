@@ -9,11 +9,33 @@ using System.Text;
 using System.Text.Json;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddResponseCompression(o =>
+{
+    o.EnableForHttps = true;
+    o.Providers.Add<BrotliCompressionProvider>();
+    o.Providers.Add<GzipCompressionProvider>();
+});
 var app = builder.Build();
+app.UseResponseCompression();
 app.UseDefaultFiles();
-app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = ctx =>
+    {
+        string name = ctx.File.Name.ToLowerInvariant();
+        bool isAsset = name.EndsWith(".jpg") || name.EndsWith(".jpeg") || name.EndsWith(".png")
+                       || name.EndsWith(".webp") || name.EndsWith(".gif") || name.EndsWith(".svg")
+                       || name.EndsWith(".ico");
+        // Ảnh/asset: cache 30 ngày (khách quay lại tải tức thì). HTML: luôn revalidate để update hiện ngay.
+        ctx.Context.Response.Headers["Cache-Control"] = isAsset ? "public,max-age=2592000" : "no-cache";
+    }
+});
+
+app.MapGet("/healthz", () => Results.Ok("ok"));
 
 string baseDir = AppContext.BaseDirectory;
 string chatDir = Path.Combine(baseDir, "chats");
