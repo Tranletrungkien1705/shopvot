@@ -48,11 +48,26 @@ docker compose up -d --build
 # mở http://localhost:5080
 ```
 
+## Build từ source
+
+Ảnh Docker **build từ source C#** (`badminton/src/`) qua Dockerfile multi-stage:
+`sdk:8.0` → `dotnet publish` → runtime `aspnet:8.0` (ảnh runtime gọn, không kèm SDK).
+
+```
+badminton/
+├── Dockerfile            # multi-stage build
+└── src/
+    ├── BadmintonShop.csproj   # net8.0, minimal API
+    ├── Program.cs            # endpoints: products / chat / order / rate / reply
+    ├── *.cs                  # models (Order, MailCfg, Msg, DTO...)
+    ├── wwwroot/              # storefront (html, img, video)
+    └── config/              # default config (runtime override bằng volume)
+```
+
 ## Ghi chú
 
-- Repo này deploy **artifact đã build sẵn** của app (`badminton/app/`) — phần DevOps
-  (Docker hoá + CI/CD + self-hosted runner + GitOps-style rolling deploy) là trọng tâm minh hoạ.
 - State khách hàng (chat/đơn hàng) **không** được commit — do Docker volume quản lý trên server.
+- `config/` trong image là **default**; lúc chạy được volume `badminton-config` ghi đè (sửa nóng không cần build lại).
 
 ---
 
