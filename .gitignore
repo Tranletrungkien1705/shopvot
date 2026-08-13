@@ -1,11 +1,13 @@
-# Runtime state (khong commit — do Docker volume quan ly tren server)
-badminton/app/chats/
-badminton/app/orders/
+# Runtime state (Docker volume quan ly tren server)
+badminton/src/chats/
+badminton/src/orders/
 
-# Debug symbols / logs
+# Build output
+bin/
+obj/
 *.pdb
 *.log
 
-# Secrets (neu sau nay them)
+# Secrets
 .env
-badminton/app/config/mail.local.json
+badminton/src/config/mail.local.json
