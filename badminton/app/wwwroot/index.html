@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop Mũ Bảo Hiểm</title>
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Segoe UI',system-ui,sans-serif; background:#f4f6f9; color:#222; }
+  header { background:linear-gradient(135deg,#1d3557,#2a6f97); color:#fff; padding:28px 20px; text-align:center; }
+  header h1 { font-size:28px; } header p { opacity:.9; margin-top:6px; }
+  .affnote { background:#fff8e1; border-bottom:1px solid #ffe0a3; color:#6b5400; font-size:13px; padding:10px 16px; text-align:center; }
+  .wrap { max-width:1100px; margin:0 auto; padding:24px 16px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:20px; }
+  .card { background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,.08); display:flex; flex-direction:column; }
+  .card .imgbox { height:200px; background:#eef1f4; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .card img { width:100%; height:100%; object-fit:cover; }
+  .card .body { padding:16px; display:flex; flex-direction:column; flex:1; }
+  .card .brand { color:#2a6f97; font-weight:600; font-size:13px; }
+  .card h3 { font-size:17px; margin:4px 0 6px; }
+  .rating { font-size:13px; color:#666; margin-bottom:6px; }
+  .rating .sd { color:#f5a623; letter-spacing:1px; }
+  .card .desc { font-size:13.5px; color:#555; line-height:1.5; flex:1; }
+  .card .price { font-size:20px; font-weight:700; color:#e63946; margin:10px 0; }
+  .card .actions { display:flex; gap:8px; flex-wrap:wrap; }
+  .card .actions button, .card .actions a { flex:1; min-width:90px; border:none; padding:9px; border-radius:8px; cursor:pointer; font-weight:600; font-size:13px; text-align:center; text-decoration:none; }
+  .btn-buy { background:#e63946; color:#fff; } .btn-buy:hover { background:#c1121f; }
+  .btn-vid { background:#fff; color:#2a6f97; border:1.5px solid #2a6f97 !important; }
+  .btn-chat { background:#2a6f97; color:#fff; }
+  .btn-cart { background:#f5a623; color:#fff; } .btn-cart:hover { background:#e0930a; }
+  .rate-row { font-size:12px; color:#888; margin-top:10px; }
+  .rate-row .rs { cursor:pointer; color:#ddd; font-size:18px; letter-spacing:2px; }
+  .rate-row .rs span:hover, .rate-row .rs span.on { color:#f5a623; }
+  footer { text-align:center; font-size:12px; color:#888; padding:24px 16px; line-height:1.6; }
+  .modal { position:fixed; inset:0; background:rgba(0,0,0,.7); display:none; align-items:center; justify-content:center; z-index:100; padding:16px; }
+  .modal.open { display:flex; }
+  #vmodal .vbox { width:100%; max-width:820px; aspect-ratio:16/9; position:relative; }
+  #vmodal iframe { width:100%; height:100%; border:0; border-radius:10px; }
+  #vmodal .vclose { position:absolute; top:-40px; right:0; color:#fff; font-size:30px; cursor:pointer; background:none; border:none; }
+  #cartModal .cbox { background:#fff; border-radius:14px; width:100%; max-width:440px; max-height:80vh; overflow:auto; padding:18px; }
+  #cartModal h2 { font-size:18px; margin-bottom:12px; }
+  .citem { display:flex; gap:10px; align-items:center; border-bottom:1px solid #eee; padding:10px 0; }
+  .citem img { width:48px; height:48px; object-fit:cover; border-radius:8px; }
+  .citem .ci-main { flex:1; font-size:13px; }
+  .citem .qty { display:flex; align-items:center; gap:6px; }
+  .citem .qty button { width:26px; height:26px; border:1px solid #ccc; background:#f7f7f7; border-radius:6px; cursor:pointer; }
+  .ctotal { font-weight:700; font-size:17px; color:#e63946; text-align:right; margin:12px 0; }
+  .cbtns { display:flex; gap:8px; }
+  .cbtns button, .cbtns a { flex:1; padding:11px; border:none; border-radius:8px; cursor:pointer; font-weight:600; text-align:center; text-decoration:none; }
+  #cartFab { position:fixed; bottom:24px; left:24px; width:62px; height:62px; border-radius:50%; background:#f5a623; color:#fff; font-size:26px; border:none; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,.25); z-index:50; }
+  #cartBadge { position:absolute; top:-4px; right:-4px; background:#e63946; color:#fff; font-size:12px; min-width:22px; height:22px; border-radius:11px; display:none; align-items:center; justify-content:center; padding:0 5px; }
+  #toast { position:fixed; bottom:100px; left:50%; transform:translateX(-50%); background:#222; color:#fff; padding:10px 18px; border-radius:20px; font-size:13px; opacity:0; transition:.3s; z-index:200; pointer-events:none; }
+  #toast.show { opacity:1; }
+  #chatBtn { position:fixed; bottom:24px; right:24px; width:62px; height:62px; border-radius:50%; background:#2a6f97; color:#fff; font-size:28px; border:none; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,.25); z-index:50; }
+  #chatBox { position:fixed; bottom:96px; right:24px; width:360px; max-width:92vw; height:480px; background:#fff; border-radius:16px; box-shadow:0 8px 30px rgba(0,0,0,.25); display:none; flex-direction:column; overflow:hidden; z-index:50; }
+  #chatBox.open { display:flex; }
+  #chatHead { background:#2a6f97; color:#fff; padding:14px 16px; font-weight:600; }
+  #chatHead small { display:block; opacity:.85; font-weight:400; font-size:12px; }
+  #msgs { flex:1; overflow-y:auto; padding:14px; display:flex; flex-direction:column; gap:10px; background:#f7f9fa; }
+  .msg { max-width:80%; padding:9px 12px; border-radius:12px; font-size:14px; line-height:1.4; white-space:pre-wrap; }
+  .msg.user { align-self:flex-end; background:#2a6f97; color:#fff; }
+  .msg.bot { align-self:flex-start; background:#fff; border:1px solid #e5e7eb; }
+  .msg.sys { align-self:center; color:#999; font-style:italic; font-size:12px; background:transparent; }
+  .msg.wait { align-self:flex-start; color:#999; font-style:italic; font-size:13px; }
+  #chatForm { display:flex; border-top:1px solid #eee; }
+  #chatInput { flex:1; border:none; padding:13px; font-size:14px; outline:none; }
+  #chatForm button { border:none; background:#2a6f97; color:#fff; padding:0 18px; cursor:pointer; font-size:16px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🪖 Shop Mũ Bảo Hiểm</h1>
+  <p>Mũ chính hãng Royal · AGU · Yohe · Roc · POC — Video review + đánh giá thật</p>
+</header>
+<div class="affnote">ℹ️ Một số nút <b>"Mua qua liên kết"</b> là <b>link tiếp thị liên kết (affiliate)</b>: shop có thể nhận hoa hồng, <b>giá bạn trả KHÔNG đổi</b>. 🙏</div>
+<div class="wrap"><div class="grid" id="grid"></div></div>
+<footer><b>Công khai tiếp thị liên kết:</b> Trang có chứa link affiliate; shop có thể nhận hoa hồng khi bạn mua qua link, không làm tăng giá bạn trả.<br>🤖 Tư vấn tự động bởi trợ lý AI.</footer>
+
+<div id="vmodal" class="modal" onclick="if(event.target.id==='vmodal')closeVideo()">
+  <div class="vbox"><button class="vclose" onclick="closeVideo()">&times;</button><iframe id="vframe" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+</div>
+
+<div id="cartModal" class="modal" onclick="if(event.target.id==='cartModal')closeCart()">
+  <div class="cbox">
+    <h2>🛒 Giỏ hàng</h2>
+    <div id="cartItems"></div>
+    <div class="ctotal" id="cartTotal"></div>
+    <div class="cbtns">
+      <button class="btn-buy" style="background:#198754;color:#fff" onclick="document.getElementById('orderForm').style.display='block'">🛒 Đặt hàng (giao COD)</button>
+      <a class="btn-buy" href="https://www.tiktok.com/@non.dep.102" target="_blank" rel="noopener" style="background:#e63946;color:#fff">Đặt qua TikTok</a>
+    </div>
+    <div id="orderForm" style="display:none;margin-top:12px;border-top:1px solid #eee;padding-top:10px">
+      <div style="font-size:13px;color:#666;margin-bottom:6px">Điền thông tin, shop gửi <b>email xác nhận</b> sau khi duyệt:</div>
+      <input id="ofName" placeholder="Họ tên" style="width:100%;padding:8px;margin-bottom:6px;border:1px solid #ccc;border-radius:7px">
+      <input id="ofEmail" placeholder="Email (nhận xác nhận)" style="width:100%;padding:8px;margin-bottom:6px;border:1px solid #ccc;border-radius:7px">
+      <input id="ofPhone" placeholder="Số điện thoại" style="width:100%;padding:8px;margin-bottom:6px;border:1px solid #ccc;border-radius:7px">
+      <button class="btn-buy" style="background:#198754;color:#fff;width:100%" onclick="submitOrder()">Gửi đơn hàng</button>
+    </div>
+  </div>
+</div>
+
+<button id="cartFab" onclick="openCart()">🛒<span id="cartBadge">0</span></button>
+<button id="chatBtn">💬</button>
+<div id="chatBox">
+  <div id="chatHead">Trợ lý Shop Mũ 🤖 <small>Tư vấn chọn mũ phù hợp với bạn!</small></div>
+  <div id="msgs"></div>
+  <form id="chatForm"><input id="chatInput" placeholder="Nhập câu hỏi..." autocomplete="off"><button type="submit">➤</button></form>
+</div>
+<div id="toast"></div>
+
+<script>
+const fmt = n => n.toLocaleString('vi-VN') + 'đ';
+let PRODUCTS = [], ratings = {};
+let cart = JSON.parse(localStorage.getItem('cart')||'[]');
+
+function toast(t){ const e=document.getElementById('toast'); e.textContent=t; e.classList.add('show'); setTimeout(()=>e.classList.remove('show'),1800); }
+function starStr(avg){ const f=Math.round(avg); return '★'.repeat(f)+'☆'.repeat(5-f); }
+
+Promise.all([fetch('/api/products').then(r=>r.json()), fetch('/api/ratings').then(r=>r.json())]).then(([ps,rt])=>{
+  PRODUCTS=ps; ratings=rt;
+  document.getElementById('grid').innerHTML = ps.map(p=>{
+    const buy = p.affiliate ? `<a class="btn-buy" href="${p.affiliate}" target="_blank" rel="nofollow sponsored noopener">🛒 Mua qua liên kết</a>` : '';
+    const rs = [1,2,3,4,5].map(n=>`<span onclick="rate(${p.id},${n})">★</span>`).join('');
+    return `
+    <div class="card">
+      <div class="imgbox"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
+      <div class="body">
+        <div class="brand">${p.brand}</div>
+        <h3>${p.name}</h3>
+        <div class="rating" data-id="${p.id}"><span class="sd">${starStr((rt[p.id]||{}).avg||0)}</span> <b class="ravg">${((rt[p.id]||{}).avg||0).toFixed(1)}</b> <span class="rcount">(${(rt[p.id]||{}).count||0} đánh giá)</span></div>
+        <div class="desc">${p.desc}</div>
+        <div class="price">${fmt(p.price)}</div>
+        <div class="actions">
+          <button class="btn-vid" onclick="openVideo('${p.video}')">▶ Video</button>
+          <button class="btn-cart" onclick="addToCart(${p.id})">🛒 Thêm giỏ</button>
+        </div>
+        <div class="actions" style="margin-top:8px">
+          <button class="btn-chat" onclick="askAbout('${p.name}')">💬 Tư vấn</button>
+          ${buy}
+        </div>
+        <div class="rate-row">Đánh giá mẫu này: <span class="rs">${rs}</span></div>
+      </div>
+    </div>`;
+  }).join('');
+  renderCartBadge();
+});
+
+function renderRating(id){ const r=ratings[id]||{avg:0,count:0}; document.querySelectorAll(`.rating[data-id="${id}"]`).forEach(el=>{ el.querySelector('.sd').textContent=starStr(r.avg); el.querySelector('.ravg').textContent=(r.avg||0).toFixed(1); el.querySelector('.rcount').textContent=`(${r.count} đánh giá)`; }); }
+async function rate(id, stars){ try{ const r=await fetch('/api/rate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({productId:id,stars})}); const j=await r.json(); if(j.ok){ ratings[id]={avg:j.avg,count:j.count}; renderRating(id); toast('Cảm ơn bạn đã đánh giá '+stars+'★!'); } }catch(e){} }
+
+function openVideo(id){ document.getElementById('vframe').src='https://www.youtube.com/embed/'+id+'?autoplay=1'; document.getElementById('vmodal').classList.add('open'); }
+function closeVideo(){ document.getElementById('vframe').src=''; document.getElementById('vmodal').classList.remove('open'); }
+
+async function submitOrder(){
+  if(!cart.length){ toast('Gio trong'); return; }
+  const name=document.getElementById('ofName').value.trim();
+  const email=document.getElementById('ofEmail').value.trim();
+  const phone=document.getElementById('ofPhone').value.trim();
+  if(!email){ alert('Vui long nhap email de nhan xac nhan don'); return; }
+  const items=cart.map(c=>({id:c.id,qty:c.qty}));
+  const r=await fetch('/api/order',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,email,phone,source:'web',items})});
+  const j=await r.json();
+  if(j.ok){ cart=[]; saveCart(); closeCart(); toast('Da nhan don #'+j.orderId+'! Shop se gui email xac nhan.'); }
+  else alert('Loi gui don, thu lai nhe');
+}
+function saveCart(){ localStorage.setItem('cart', JSON.stringify(cart)); renderCartBadge(); }
+function renderCartBadge(){ const n=cart.reduce((s,c)=>s+c.qty,0); const b=document.getElementById('cartBadge'); b.textContent=n; b.style.display=n?'flex':'none'; }
+function addToCart(id){ const it=cart.find(c=>c.id===id); if(it)it.qty++; else cart.push({id,qty:1}); saveCart(); toast('Đã thêm vào giỏ 🛒'); }
+function changeQty(id,d){ const it=cart.find(c=>c.id===id); if(!it)return; it.qty+=d; if(it.qty<=0)cart=cart.filter(c=>c.id!==id); saveCart(); renderCartModal(); }
+function openCart(){ renderCartModal(); document.getElementById('cartModal').classList.add('open'); }
+function closeCart(){ document.getElementById('cartModal').classList.remove('open'); }
+function renderCartModal(){
+  const box=document.getElementById('cartItems');
+  if(!cart.length){ box.innerHTML='<p style="color:#888;text-align:center;padding:20px 0">Giỏ hàng trống</p>'; document.getElementById('cartTotal').textContent=''; return; }
+  let total=0;
+  box.innerHTML = cart.map(c=>{ const p=PRODUCTS.find(x=>x.id===c.id); if(!p)return''; total+=p.price*c.qty; return `<div class="citem"><img src="${p.img}"><div class="ci-main"><div>${p.name}</div><div style="color:#e63946;font-weight:600">${fmt(p.price)}</div></div><div class="qty"><button onclick="changeQty(${c.id},-1)">-</button><b>${c.qty}</b><button onclick="changeQty(${c.id},1)">+</button></div></div>`; }).join('');
+  document.getElementById('cartTotal').textContent='Tổng: '+fmt(total);
+}
+function checkoutChat(){
+  let lines=cart.map(c=>{const p=PRODUCTS.find(x=>x.id===c.id); return p?`- ${p.name} x${c.qty}`:'';}).filter(Boolean);
+  const total=cart.reduce((s,c)=>{const p=PRODUCTS.find(x=>x.id===c.id); return s+(p?p.price*c.qty:0);},0);
+  closeCart(); document.getElementById('chatBox').classList.add('open'); opened=true;
+  document.getElementById('chatInput').value='Mình muốn đặt đơn:\n'+lines.join('\n')+'\nTổng: '+fmt(total)+'. Shop chốt giúp mình nhé!';
+  poll();
+}
+
+function newSid(){ return 'sess-'+Date.now()+'-'+Math.random().toString(36).slice(2,8); }
+let sid=localStorage.getItem('sid'); if(!sid){ sid=newSid(); localStorage.setItem('sid',sid); }
+let rotated=(localStorage.getItem('rotated')==='1');
+const box=document.getElementById('chatBox'), msgs=document.getElementById('msgs');
+let opened=false;
+document.getElementById('chatBtn').onclick=()=>{ box.classList.toggle('open'); opened=!opened; if(opened)poll(); };
+function askAbout(name){ box.classList.add('open'); opened=true; document.getElementById('chatInput').value='Tư vấn giúp mình về '+name; poll(); }
+function addLine(t,cls){ const d=document.createElement('div'); d.className='msg '+cls; d.textContent=t; msgs.appendChild(d); }
+function render(list){ msgs.innerHTML=''; if(rotated)addLine('── Đã mở cuộc trò chuyện mới ──','sys'); if(list.length===0)addLine('Xin chào! Mình là trợ lý Shop Mũ Bảo Hiểm 🪖 Bạn cần tư vấn mẫu nào, hỏi giá/size/ship hay đánh giá?','bot'); list.forEach(m=>addLine(m.content,m.role==='user'?'user':'bot')); if(list.length&&list[list.length-1].role==='user')addLine('Tư vấn viên đang trả lời...','wait'); msgs.scrollTop=msgs.scrollHeight; }
+async function poll(){ if(!opened)return; try{ const r=await fetch('/api/messages/'+sid); render(await r.json()); }catch(e){} }
+setInterval(poll,2500);
+async function postChat(s,text){ const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:s,message:text})}); return r.json(); }
+document.getElementById('chatForm').onsubmit=async e=>{ e.preventDefault(); const inp=document.getElementById('chatInput'); const text=inp.value.trim(); if(!text)return; inp.value=''; let res=await postChat(sid,text); if(res&&res.full){ sid=newSid(); localStorage.setItem('sid',sid); rotated=true; localStorage.setItem('rotated','1'); res=await postChat(sid,text);} poll(); };
+</script>
+</body>
+</html>

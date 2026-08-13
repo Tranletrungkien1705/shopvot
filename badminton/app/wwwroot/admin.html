@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quản lý đơn — Shop Mũ</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',system-ui,sans-serif}
+  body{background:#f4f6f9;color:#222;padding:16px;max-width:900px;margin:0 auto}
+  h1{font-size:22px;margin-bottom:4px} .sub{color:#888;font-size:13px;margin-bottom:14px}
+  .bar{background:#fff;border-radius:10px;padding:12px;box-shadow:0 1px 6px rgba(0,0,0,.06);margin-bottom:14px}
+  .warn{background:#fff3cd;border:1px solid #ffe69c;color:#7a5b00;padding:10px;border-radius:8px;font-size:13px;margin-bottom:14px}
+  .ok{background:#d1e7dd;border:1px solid #a3cfbb;color:#0f5132}
+  input,select,textarea{padding:8px;border:1px solid #ccc;border-radius:7px;font-size:14px;width:100%}
+  label{font-size:13px;color:#555;display:block;margin:8px 0 3px}
+  button{border:none;border-radius:8px;padding:9px 14px;cursor:pointer;font-weight:600;font-size:14px}
+  .btn-p{background:#2a6f97;color:#fff}.btn-g{background:#198754;color:#fff}.btn-s{background:#eee;color:#333}
+  .card{background:#fff;border-radius:10px;padding:14px;box-shadow:0 1px 6px rgba(0,0,0,.06);margin-bottom:12px}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .badge{font-size:11px;padding:3px 9px;border-radius:20px;font-weight:600}
+  .b-pending{background:#fff3cd;color:#7a5b00}.b-confirmed{background:#d1e7dd;color:#0f5132}
+  .items{font-size:13px;color:#444;margin:8px 0}
+  .total{font-weight:700;color:#e63946}
+  .prodpick{display:flex;align-items:center;gap:8px;font-size:13px;margin:4px 0}
+  .prodpick input[type=number]{width:60px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+</style></head>
+<body>
+<h1>🪖 Quản lý đơn hàng</h1>
+<div class="sub">Duyệt đơn → gửi mail xác nhận cho khách. Nhập đơn từ Facebook thủ công.</div>
+
+<div class="bar">
+  <label>Admin key</label>
+  <div class="row"><input id="key" style="flex:1" placeholder="nhập admin key"><button class="btn-p" onclick="loadAll()">Tải đơn</button></div>
+</div>
+<div id="mailwarn"></div>
+
+<div class="bar">
+  <b>➕ Tạo đơn mới (từ Facebook / thủ công)</b>
+  <div class="grid2" style="margin-top:8px">
+    <div><label>Tên khách</label><input id="oname"></div>
+    <div><label>SĐT</label><input id="ophone"></div>
+  </div>
+  <label>Email khách (để gửi xác nhận)</label><input id="oemail" placeholder="email@gmail.com">
+  <label>Ghi chú</label><input id="onote">
+  <label>Chọn sản phẩm</label>
+  <div id="prodpick"></div>
+  <div style="margin-top:10px"><button class="btn-p" onclick="createOrder()">Tạo đơn (chờ duyệt)</button></div>
+</div>
+
+<h3 style="margin:14px 0 8px">📋 Danh sách đơn</h3>
+<div id="orders"></div>
+
+<script>
+const K=()=>document.getElementById('key').value.trim();
+let PRODUCTS=[];
+function money(n){return n.toLocaleString('vi-VN')+'đ'}
+
+fetch('/api/products').then(r=>r.json()).then(ps=>{
+  PRODUCTS=ps;
+  document.getElementById('prodpick').innerHTML = ps.map(p=>`<div class="prodpick"><label style="display:flex;align-items:center;gap:6px;margin:0"><input type="checkbox" data-id="${p.id}" style="width:auto"> ${p.name} (${money(p.price)})</label> SL:<input type="number" data-qty="${p.id}" value="1" min="1"></div>`).join('');
+});
+
+async function loadAll(){
+  if(!K()){alert('Nhập admin key');return}
+  // mail status
+  try{ const m=await (await fetch('/api/mailstatus/'+K())).json();
+    document.getElementById('mailwarn').innerHTML = m.enabled && m.configured
+      ? `<div class="warn ok">✅ Email đã cấu hình: gửi từ <b>${m.user}</b> · báo chủ shop: <b>${m.ownerEmail||'(chưa đặt)'}</b></div>`
+      : `<div class="warn">⚠️ <b>Email CHƯA cấu hình</b> — đơn vẫn lưu được nhưng chưa gửi mail. Cần đặt Gmail + App Password trong config/mail.json.</div>`;
+  }catch(e){ document.getElementById('mailwarn').innerHTML='<div class="warn">Sai admin key hoặc lỗi kết nối.</div>'; return; }
+  // orders
+  const r=await fetch('/api/orders/'+K()); if(!r.ok){alert('Sai key');return}
+  const list=await r.json();
+  document.getElementById('orders').innerHTML = list.length ? list.map(o=>{
+    const items=o.items.map(i=>`${i.name} × ${i.qty}`).join('<br>');
+    const pending=o.status==='pending';
+    return `<div class="card">
+      <div class="row" style="justify-content:space-between">
+        <div><b>#${o.id}</b> <span class="badge ${pending?'b-pending':'b-confirmed'}">${pending?'CHỜ DUYỆT':'ĐÃ XÁC NHẬN'}</span> <span style="color:#999;font-size:12px">${o.source} · ${o.ts}</span></div>
+        <div class="total">${money(o.total)}</div>
+      </div>
+      <div style="font-size:13px;margin-top:6px">👤 ${o.name||'(no name)'} · 📞 ${o.phone||'-'} · ✉️ ${o.email}</div>
+      <div class="items">${items}</div>
+      ${o.note?`<div style="font-size:12px;color:#888">Ghi chú: ${o.note}</div>`:''}
+      ${pending?`<button class="btn-g" onclick="approve('${o.id}')">✅ Duyệt & gửi mail xác nhận</button>`:`<span style="color:#198754;font-size:12px">✔ Đã gửi mail ${o.confirmedTs||''}</span>`}
+    </div>`;
+  }).join('') : '<div style="color:#888">Chưa có đơn nào.</div>';
+}
+
+async function createOrder(){
+  if(!K()){alert('Nhập admin key trước');return}
+  const items=[...document.querySelectorAll('#prodpick input[type=checkbox]:checked')].map(c=>{
+    const id=+c.dataset.id; const qty=+document.querySelector(`[data-qty="${id}"]`).value||1; return {id,qty};
+  });
+  if(!items.length){alert('Chọn ít nhất 1 sản phẩm');return}
+  const email=document.getElementById('oemail').value.trim();
+  if(!email){alert('Nhập email khách để gửi xác nhận');return}
+  const body={name:document.getElementById('oname').value,email,phone:document.getElementById('ophone').value,note:document.getElementById('onote').value,source:'facebook',items};
+  const r=await fetch('/api/order',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  const j=await r.json();
+  if(j.ok){ alert('Đã tạo đơn #'+j.orderId+' (chờ duyệt)'); document.getElementById('oname').value='';document.getElementById('oemail').value='';document.getElementById('ophone').value='';document.getElementById('onote').value=''; loadAll(); }
+  else alert('Lỗi tạo đơn');
+}
+
+async function approve(id){
+  if(!confirm('Duyệt đơn #'+id+' và gửi mail xác nhận cho khách?'))return;
+  const r=await fetch('/api/order/approve',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key:K(),orderId:id})});
+  const j=await r.json();
+  if(j.ok){ alert('✅ Đã gửi mail xác nhận cho khách!'); loadAll(); }
+  else alert('❌ Chưa gửi được mail: '+(j.error||'lỗi')+'\n(Kiểm tra cấu hình Gmail/App Password)');
+}
+
+// auto-fill key from URL ?key=
+const u=new URLSearchParams(location.search); if(u.get('key')){document.getElementById('key').value=u.get('key'); loadAll();}
+</script>
+</body></html>

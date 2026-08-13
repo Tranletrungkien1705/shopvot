@@ -1,0 +1,51 @@
+name: deploy
+
+# Push len main -> self-hosted runner tren may 150 tu build lai Docker image
+# va rolling-update service badminton trong stack /opt/idocnet. Khong ai deploy tay.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-shopvot
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, shopvot]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Sync build context vao /opt/idocnet/badminton
+        run: |
+          set -e
+          rsync -a --delete \
+            --exclude 'chats/' --exclude 'orders/' \
+            "$GITHUB_WORKSPACE/badminton/" /opt/idocnet/badminton/
+          echo "Synced $(git rev-parse --short HEAD)"
+
+      - name: Build image + rolling update
+        working-directory: /opt/idocnet
+        run: |
+          set -e
+          docker compose build badminton
+          docker compose up -d badminton
+
+      - name: Health check (127.0.0.1:5080)
+        run: |
+          set -e
+          for i in $(seq 1 20); do
+            if curl -sf -o /dev/null http://127.0.0.1:5080/; then
+              echo "OK sau ${i} lan thu"; exit 0
+            fi
+            sleep 2
+          done
+          echo "Health check FAILED"; docker compose -f /opt/idocnet/docker-compose.yml logs --tail=40 badminton || true
+          exit 1
+
+      - name: Verify public URL (Worker)
+        run: |
+          code=$(curl -s -o /dev/null -w '%{http_code}' https://shopvot.kientlt59.workers.dev/ || echo 000)
+          echo "Worker public HTTP: $code"

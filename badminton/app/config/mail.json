@@ -1,0 +1,9 @@
+{
+    "smtpHost":  "smtp.gmail.com",
+    "ownerEmail":  "",
+    "fromName":  "Shop Mu Bao Hiem",
+    "smtpPort":  587,
+    "user":  "",
+    "appPassword":  "",
+    "enabled":  false
+}

@@ -1,0 +1,715 @@
+{
+    "enabled":  true,
+    "rules":  [
+                  {
+                      "reply":  "Dạ giá shop đã để giá tốt nhất rồi nên khó bớt thêm nhiều ạ 🙏 Bù lại shop cam kết hàng chính hãng + bảo hành đầy đủ, hay tặng kèm quà nhỏ. Nếu bạn lấy 2 cái trở lên shop xin ưu đãi combo nha. Bạn chốt mẫu + size để shop báo giá yêu thương nhất ạ! Đặt qua TikTok @non.dep.102.",
+                      "keywords":  [
+                                       "mặc cả",
+                                       "mac ca",
+                                       "bớt giá",
+                                       "bot gia",
+                                       "trả giá",
+                                       "tra gia",
+                                       "fix giá",
+                                       "fix gia",
+                                       "fix 450",
+                                       "fix 800",
+                                       "chốt giá",
+                                       "chot gia",
+                                       "bớt thêm",
+                                       "bot them",
+                                       "bớt chút",
+                                       "bot chut",
+                                       "bớt đi",
+                                       "bot di",
+                                       "giảm thêm",
+                                       "giam them",
+                                       "mắc thế",
+                                       "mac the",
+                                       "mắc vậy",
+                                       "mac vay",
+                                       "rẻ hơn shop",
+                                       "re hon shop",
+                                       "bên kia rẻ",
+                                       "ben kia re",
+                                       "kỳ kèo",
+                                       "ky keo",
+                                       "mua 2 cái",
+                                       "mua 2 cai",
+                                       "giá mềm",
+                                       "gia mem"
+                                   ]
+                  },
+                  {
+                      "reply":  "Dạ shop cam kết 100% hàng chính hãng, đầy đủ tem chống giả + hộp + phụ kiện theo hãng, KHÔNG bán fake/dựng ạ. Mỗi mũ có tem (quét QR kiểm tra được) + hóa đơn, bạn nhận hàng kiểm tra thoải mái mới yên tâm. Giá shop tốt là do nhập số lượng tận gốc chứ không phải hàng dởm nha. Xem clip đập hộp thật ở TikTok @non.dep.102 ạ!",
+                      "keywords":  [
+                                       "chính hãng",
+                                       "chinh hang",
+                                       "hàng thật",
+                                       "hang that",
+                                       "hàng giả",
+                                       "hang gia",
+                                       "hàng fake",
+                                       "hang fake",
+                                       "fake không",
+                                       "fake ko",
+                                       "fake ha",
+                                       "hàng nhái",
+                                       "hang nhai",
+                                       "auth hay",
+                                       "auth ko",
+                                       "hàng rep",
+                                       "hang rep",
+                                       "hàng dựng",
+                                       "hang dung",
+                                       "hàng tàu",
+                                       "hang tau",
+                                       "hàng trung quoc",
+                                       "made in",
+                                       "nguồn gốc",
+                                       "nguon goc",
+                                       "xuất xứ",
+                                       "xuat xu",
+                                       "tem thật",
+                                       "tem that",
+                                       "tem giả",
+                                       "tem gia",
+                                       "quét qr",
+                                       "quet qr",
+                                       "real hay fake",
+                                       "có lừa",
+                                       "co lua",
+                                       "hàng dởm",
+                                       "hang dom",
+                                       "hàng đểu",
+                                       "hang deu"
+                                   ]
+                  },
+                  {
+                      "reply":  "Dạ shop xin lỗi vì trải nghiệm chưa tốt ạ 🙏 Bạn cho shop xin MÃ ĐƠN + chụp/quay clip chỗ bị lỗi (sai màu, xước, ướt lót, kẹt khóa...) qua TikTok @non.dep.102 để shop kiểm tra ngay. Nếu lỗi do shop hoặc nhà sản xuất, shop chịu phí đổi trả và xử lý đổi mới/hoàn tiền cho bạn. Đơn giao chậm thì shop check vận chuyển báo lại liền, mong bạn thông cảm ạ!",
+                      "keywords":  [
+                                       "khiếu nại",
+                                       "khieu nai",
+                                       "hàng lỗi",
+                                       "hang loi",
+                                       "sản phẩm lỗi",
+                                       "san pham loi",
+                                       "mũ lỗi",
+                                       "mu loi",
+                                       "bị lỗi",
+                                       "bi loi",
+                                       "giao chậm",
+                                       "giao cham",
+                                       "chậm quá",
+                                       "cham qua",
+                                       "chưa thấy hàng",
+                                       "chua thay hang",
+                                       "ôm tiền",
+                                       "om tien",
+                                       "sai màu",
+                                       "sai mau",
+                                       "không giống hình",
+                                       "khong giong hinh",
+                                       "xước",
+                                       "xuoc",
+                                       "bóc phốt",
+                                       "boc phot",
+                                       "đòi đền",
+                                       "doi den",
+                                       "bắt đền",
+                                       "bat den",
+                                       "trả lại tiền",
+                                       "tra lai tien",
+                                       "đổi tiền lại",
+                                       "doi tien lai",
+                                       "nứt mũ",
+                                       "nut mu",
+                                       "bị kẹt",
+                                       "bi ket",
+                                       "bị gãy",
+                                       "bi gay",
+                                       "bị lỏng",
+                                       "bi long",
+                                       "lừa khách",
+                                       "lua khach",
+                                       "quảng cáo xạo",
+                                       "quang cao xao"
+                                   ]
+                  },
+                  {
+                      "reply":  "Dạ mũ fullface che chắn gió bụi rất tốt, nhưng mũ bảo hiểm nói chung KHÔNG kín nước tuyệt đối 100% đâu ạ — đi mưa to lâu nước vẫn có thể thấm qua khe kính/lỗ thoáng nên lót hơi ẩm là bình thường, không phải hàng dởm nha 🌧️ Bạn nhớ đóng khóa kính chắn gió kín và lau khô lót sau khi về. Nếu ướt nhiều bất thường, gửi clip qua TikTok @non.dep.102 shop kiểm tra giúp ạ!",
+                      "keywords":  [
+                                       "chống nước",
+                                       "chong nuoc",
+                                       "cản nước",
+                                       "can nuoc",
+                                       "kín nước",
+                                       "kin nuoc",
+                                       "nước tạt",
+                                       "nuoc tat",
+                                       "nước vào trong",
+                                       "nuoc vao trong",
+                                       "lót ướt",
+                                       "lot uot",
+                                       "ướt sương",
+                                       "uot suong",
+                                       "vô nước",
+                                       "vo nuoc",
+                                       "vào nước",
+                                       "chống thấm",
+                                       "chong tham",
+                                       "fullface chống nước"
+                                   ]
+                  },
+                  {
+                      "reply":  "Dạ vỏ ngoài mũ làm từ nhựa ABS/PC nguyên sinh cao cấp (tùy dòng có composite), chịu lực tốt, KHÔNG phải nhựa tái chế ạ. Bên trong là lớp xốp EPS chuẩn, đủ độ dày + tỉ trọng để hấp thụ xung khi va đập — shop không ăn bớt xốp đâu nha. Đội lâu vẫn giữ phom, không bị bục như mút thường. Bạn cho shop xin mẫu cụ thể để báo đúng chất liệu từng con ạ!",
+                      "keywords":  [
+                                       "vật liệu",
+                                       "vat lieu",
+                                       "chất liệu",
+                                       "chat lieu",
+                                       "lớp xốp",
+                                       "lop xop",
+                                       "xốp eps",
+                                       "xop eps",
+                                       " eps",
+                                       "vỏ abs",
+                                       "vo abs",
+                                       "abs hay pc",
+                                       "vỏ pc",
+                                       "vo pc",
+                                       "composite",
+                                       "sợi thủy tinh",
+                                       "soi thuy tinh",
+                                       "nhựa tái chế",
+                                       "nhua tai che",
+                                       "vỏ làm bằng",
+                                       "vo lam bang",
+                                       "mút xốp",
+                                       "mut xop",
+                                       "mút tàu",
+                                       "mut tau",
+                                       "tỉ trọng",
+                                       "ti trong",
+                                       "density",
+                                       "vỏ làm từ",
+                                       "vo lam tu"
+                                   ]
+                  },
+                  {
+                      "reply":  "Dạ shop có cửa hàng cho bạn ghé xem và thử mũ trực tiếp nha. Bạn nhắn shop khu vực bạn đang ở, shop gửi địa chỉ + định vị Google Maps chi tiết cho dễ tới ạ. Hoặc tiện hơn thì shop ship tận nơi, cho kiểm tra hàng rồi mới thanh toán. Xem mẫu thật ở TikTok @non.dep.102 trước khi ghé nha!",
+                      "keywords":  [
+                                       "địa chỉ shop",
+                                       "dia chi shop",
+                                       "đường đi tới shop",
+                                       "duong di toi shop",
+                                       "đường đi đến shop",
+                                       "shop ở đâu",
+                                       "shop o dau",
+                                       "chỉ đường",
+                                       "chi duong",
+                                       "ghé shop",
+                                       "ghe shop",
+                                       "cửa hàng ở đâu",
+                                       "cua hang o dau",
+                                       "tới shop kiểu nào",
+                                       "toi shop",
+                                       "có cửa hàng",
+                                       "co cua hang",
+                                       "xem trực tiếp ở đâu",
+                                       "địa chỉ cửa hàng",
+                                       "dia chi cua hang",
+                                       "shop chỗ nào",
+                                       "shop cho nao"
+                                   ]
+                  },
+                  {
+                      "reply":  "Dạ bên shop có nhiều mũ tầm giá bình dân mà chất lượng vẫn đảm bảo, đạt chuẩn an toàn nha. Rẻ nhất là Andes 3S6 (380k) và AGU Tem Sói (550k). Bạn cho shop biết tầm giá mong muốn để gợi ý mẫu rẻ mà bền nhất ạ! Đặt qua TikTok @non.dep.102 nhé!",
+                      "keywords":  [
+                                       "rẻ nhất",
+                                       "re nhat",
+                                       "giá rẻ",
+                                       "gia re",
+                                       "mũ rẻ",
+                                       "mu re",
+                                       "bình dân",
+                                       "binh dan",
+                                       "tầm giá thấp",
+                                       "tam gia thap",
+                                       "rẻ mà tốt",
+                                       "re ma tot",
+                                       "ít tiền",
+                                       "it tien",
+                                       "giá thấp",
+                                       "gia thap"
+                                   ]
+                  },
+                  {
+                      "reply":  "Dạ các mẫu fullface và lật cằm bên shop đều có rãnh ôm hai bên thái dương nên đeo kính cận vẫn đội thoải mái, gọng kính luồn vào êm, không bị cấn hay vướng ạ. Bạn cho shop biết mẫu đang quan tâm để tư vấn loại ôm vừa nhất khi đeo kính nha. Đặt qua TikTok @non.dep.102 ạ!",
+                      "keywords":  [
+                                       "kính cận",
+                                       "kinh can",
+                                       "đeo kính",
+                                       "deo kinh",
+                                       "đội kính",
+                                       "doi kinh",
+                                       "kính thuốc",
+                                       "kinh thuoc",
+                                       "cận thị",
+                                       "can thi",
+                                       "vướng kính",
+                                       "vuong kinh",
+                                       "gọng kính",
+                                       "gong kinh"
+                                   ]
+                  },
+                  {
+                      "reply":  "Dạ trọng lượng tùy mẫu ạ: dòng 3/4 nửa đầu nhẹ (~0.9–1.1kg), lật cằm ~1.1–1.3kg, fullface chắc chắn hơn ~1.4–1.6kg. Cổ yếu hay sợ đội lâu mỏi thì shop khuyên chọn loại nhẹ, cân đối tốt. Bạn nhắn tên mẫu shop báo cân nặng chính xác nha. Đặt qua TikTok @non.dep.102 ạ!",
+                      "keywords":  [
+                                       "nặng bao nhiêu",
+                                       "nang bao nhieu",
+                                       "bao nhiêu gram",
+                                       "bao nhieu gram",
+                                       "trọng lượng",
+                                       "trong luong",
+                                       "cân nặng",
+                                       "can nang",
+                                       "nhẹ hay nặng",
+                                       "nhe hay nang",
+                                       "nhẹ không",
+                                       "nhe khong",
+                                       "mỏi cổ",
+                                       "moi co",
+                                       "đội lâu mỏi",
+                                       "doi lau moi",
+                                       "mũ nhẹ",
+                                       "mu nhe",
+                                       "mấy gram",
+                                       "may gram",
+                                       "gram"
+                                   ]
+                  },
+                  {
+                      "reply":  "Dạ các mẫu fullface/lật cằm bên shop đều có hệ thống thông khí, nhiều mẫu hỗ trợ chốt Pinlock chống mờ kính nha. Chạy sáng gặp sương bạn hé chốt kính 1 nấc cho thoáng là hết mờ liền. Bạn muốn mẫu nào có sẵn Pinlock thì nhắn shop nhé! Đặt qua TikTok @non.dep.102 ạ!",
+                      "keywords":  [
+                                       "mờ kính",
+                                       "mo kinh",
+                                       "mờ kính chắn gió",
+                                       "mo kinh chan gio",
+                                       "hấp hơi",
+                                       "hap hoi",
+                                       "chống mờ",
+                                       "chong mo",
+                                       "đọng sương",
+                                       "dong suong",
+                                       "pinlock",
+                                       "hơi nước",
+                                       "hoi nuoc"
+                                   ]
+                  },
+                  {
+                      "reply":  "Dạ các dòng fullface bên shop ôm đầu kín + đệm lót dày nên giảm ồn gió khá tốt, chạy tốc độ thường ít bị ù tai ạ. Hay đi đường trường thì shop khuyên chọn mẫu có kính chắn gió ở cằm cho êm tai hơn. Cần tư vấn mẫu cụ thể bạn nhắn shop nha! Đặt qua TikTok @non.dep.102 ạ!",
+                      "keywords":  [
+                                       "ồn gió",
+                                       "on gio",
+                                       "ù tai",
+                                       "u tai",
+                                       "tiếng gió",
+                                       "tieng gio",
+                                       "cách âm",
+                                       "cach am",
+                                       "gió bên tai",
+                                       "gio ben tai",
+                                       "chống ồn",
+                                       "chong on",
+                                       "bị ồn",
+                                       "bi on"
+                                   ]
+                  },
+                  {
+                      "reply":  "Dạ các mẫu bên shop đều có khe lấy gió trước–sau giúp lưu thông khí nên đội mùa hè vẫn thoáng, ít bị hấp nóng ạ. Hay đi phố nhiều thì shop gợi ý mẫu 3/4 nửa đầu hoặc nhiều van gió để đội mát hơn. Bạn nhắn tên mẫu shop tư vấn kỹ hơn nha! Đặt qua TikTok @non.dep.102 ạ!",
+                      "keywords":  [
+                                       "bí nóng",
+                                       "bi nong",
+                                       "thoáng khí",
+                                       "thoang khi",
+                                       "thoáng mát",
+                                       "thoang mat",
+                                       "thông gió",
+                                       "thong gio",
+                                       "đội mát",
+                                       "doi mat",
+                                       "mát hơn",
+                                       "mat hon",
+                                       "bí hấp",
+                                       "bi hap",
+                                       "nóng đầu",
+                                       "nong dau",
+                                       "khe gió",
+                                       "khe gio",
+                                       "lỗ gió",
+                                       "lo gio",
+                                       "độ thoáng",
+                                       "do thoang"
+                                   ]
+                  },
+                  {
+                      "reply":  "Dạ phần lót trong các mẫu bên shop đều tháo rời được nên bạn giặt tay nhẹ với xà phòng dịu, vắt ráo phơi nơi mát là sạch thơm nha (đừng sấy hay phơi nắng gắt kẻo nhanh xuống cấp). Mẫu cao cấp còn có lót kháng khuẩn. Cần chỉ cách tháo lót từng mẫu thì nhắn shop nhé! TikTok @non.dep.102.",
+                      "keywords":  [
+                                       "vệ sinh lót",
+                                       "ve sinh lot",
+                                       "giặt lót",
+                                       "giat lot",
+                                       "tháo lót",
+                                       "thao lot",
+                                       "lót bên trong",
+                                       "lot ben trong",
+                                       "vệ sinh mũ",
+                                       "ve sinh mu",
+                                       "giặt được không",
+                                       "giat duoc khong",
+                                       "làm sạch",
+                                       "lam sach"
+                                   ]
+                  },
+                  {
+                      "reply":  "Dạ khóa quai bên shop có loại khóa gài an toàn và loại Double-D (vòng chữ D) cực chắc, cài vào là ôm cằm gọn, đi xa hay va chạm vẫn giữ nguyên không bung nha. Quai có đệm lót mềm không bị cấn. Bạn muốn mẫu có loại khóa nào thì nhắn shop nhé! Đặt qua TikTok @non.dep.102 ạ!",
+                      "keywords":  [
+                                       "khóa quai",
+                                       "khoa quai",
+                                       "quai cài",
+                                       "quai cai",
+                                       "khóa cằm",
+                                       "khoa cam",
+                                       "dây quai",
+                                       "day quai",
+                                       "chốt quai",
+                                       "chot quai",
+                                       "double d",
+                                       "khóa nhựa",
+                                       "khoa nhua",
+                                       "khóa kim loại",
+                                       "khoa kim loai",
+                                       "quai khóa",
+                                       "quai khoa"
+                                   ]
+                  },
+                  {
+                      "reply":  "Dạ các dòng fullface/lật cằm bên shop đều là mũ chính hãng, vỏ ABS chịu lực + lớp xốp EPS hấp thụ xung lực, an toàn để chạy đường dài và tốc độ cao ạ. Tùy mẫu có tem kiểm định ECE/DOT, bạn cho shop biết mẫu quan tâm để check chính xác giúp nha. Đặt qua TikTok @non.dep.102 ạ!",
+                      "keywords":  [
+                                       "chuẩn an toàn",
+                                       "chuan an toan",
+                                       "ece",
+                                       "dot",
+                                       "chống va đập",
+                                       "chong va dap",
+                                       "va đập",
+                                       "va dap",
+                                       "va chạm",
+                                       "va cham",
+                                       "té cao tốc",
+                                       "te cao toc",
+                                       "đỡ đầu",
+                                       "do dau",
+                                       "bảo vệ đầu",
+                                       "bao ve dau",
+                                       "kiểm định",
+                                       "kiem dinh",
+                                       "đạt chuẩn",
+                                       "dat chuan",
+                                       "tai nạn",
+                                       "tai nan"
+                                   ]
+                  },
+                  {
+                      "reply":  "Mũ fullface trùm kín đầu nên đi mưa che mặt rất tốt, vỏ nhựa ABS không ngấm nước 🌧️ Kính dễ bám hơi—bạn hé kính chút cho thoáng. Lưu ý: không ngâm nước lâu nhé!",
+                      "keywords":  [
+                                       "chống mưa",
+                                       "chong mua",
+                                       "mưa",
+                                       "mưa gió",
+                                       "mua gio",
+                                       "trời mưa",
+                                       "troi mua",
+                                       "đi mưa",
+                                       "thấm nước",
+                                       "tham nuoc"
+                                   ]
+                  },
+                  {
+                      "reply":  "Các mẫu thường có: đen nhám, trắng, xám, xanh, đỏ (tùy mẫu \u0026 tồn kho) 🎨 Bạn thích mẫu nào + màu gì để shop kiểm tra còn hàng nhé?",
+                      "keywords":  [
+                                       "màu",
+                                       "mau sac",
+                                       "màu sắc",
+                                       "color",
+                                       "màu nào",
+                                       
+                                       "có màu",
+                                       "co mau",
+                                       "đen nhám",
+                                       "xám",
+                                       "xanh"
+                                   ]
+                  },
+                  {
+                      "reply":  "Mẫu lật cằm/lật hàm tiện (nhấc cằm khỏi cần tháo mũ): Royal M179 (950k) và Yohe 950 (1.250k). Bạn xem video trên TikTok shop nhé!",
+                      "keywords":  [
+                                       "lật cằm",
+                                       "lat cam",
+                                       "lật hàm",
+                                       "lat ham",
+                                       "lật được cằm",
+                                       "lat dc cam",
+                                       "lat duoc cam",
+                                       "lật cằm lên",
+                                       "lat cam len",
+                                       "fullface",
+                                       "full face",
+                                       "trùm đầu",
+                                       "trum dau"
+                                   ]
+                  },
+                  {
+                      "reply":  "Đo vòng đầu (quấn thước trên lông mày): 54–57cm chọn M, 57–60cm chọn L, 60–62cm chọn XL. Bạn đo được bao nhiêu cm để shop tư vấn ạ?",
+                      "keywords":  [
+                                       "size",
+                                       "sai",
+                                       "cỡ",
+                                       "vòng đầu",
+                                       "vong dau",
+                                       "đầu to",
+                                       "dau to",
+                                       "đầu nhỏ",
+                                       "dau nho"
+                                   ]
+                  },
+                  {
+                      "reply":  "Shop giao toàn quốc, COD nhận hàng trả tiền 🚚 Nội thành ~20–30k, tỉnh tùy nơi. Bạn ở khu vực nào ạ?",
+                      "keywords":  [
+                                       "ship",
+                                       "giao",
+                                       "giao hàng",
+                                       "giao hang",
+                                       "vận chuyển",
+                                       "van chuyen",
+                                       "cod",
+                                       "freeship",
+                                       "phí ship",
+                                       "phi ship"
+                                   ]
+                  },
+                  {
+                      "reply":  "Hàng chính hãng, có tem, bảo hành theo hãng (thường 6–12 tháng tùy dòng) cho lỗi nhà sản xuất. Bạn yên tâm nhé! ✅",
+                      "keywords":  [
+                                       "bảo hành",
+                                       "bao hanh",
+                                       "bảo hành bao lâu",
+                                       "bao hanh bao lau",
+                                       "bảo hành thế nào",
+                                       "đảm bảo",
+                                       "dam bao",
+                                       "bh bao lau"
+                                   ]
+                  },
+                  {
+                      "reply":  "Shop hỗ trợ ĐỔI size/mẫu trong 3–7 ngày nếu mũ còn mới, đủ tem mác, chưa sử dụng 🔄 Đơn lỡ đặt mà chưa gửi đi thì đổi mẫu thoải mái, không tính thêm phí (chỉ bù/hoàn chênh lệch giá). Lỗi nhà sản xuất đổi mới ngay. Bạn giữ hộp + hóa đơn và nhắn shop mã đơn nhé!",
+                      "keywords":  [
+                                       "đổi trả",
+                                       "doi tra",
+                                       "đổi hàng",
+                                       "doi hang",
+                                       "trả hàng",
+                                       "tra hang",
+                                       "đổi size",
+                                       "doi size",
+                                       "đổi mẫu",
+                                       "doi mau",
+                                       "return",
+                                       "lỡ đặt",
+                                       "lo dat",
+                                       "hủy đơn",
+                                       "huy don",
+                                       "đặt nhầm",
+                                       "dat nham",
+                                       "sửa đơn",
+                                       "sua don",
+                                       "đổi đơn",
+                                       "doi don",
+                                       "đã đặt rồi đổi",
+                                       "da dat roi doi"
+                                   ]
+                  },
+                  {
+                      "reply":  "Shop có ưu đãi + freeship vào các dịp và khi mua qua TikTok Shop 🎁 Một số mẫu đang giảm nhẹ. Bạn quan tâm mẫu nào để shop báo giá tốt nhất ạ?",
+                      "keywords":  [
+                                       "khuyến mãi",
+                                       "khuyen mai",
+                                       "sale",
+                                       "giảm giá",
+                                       "giam gia",
+                                       "ưu đãi",
+                                       "uu dai",
+                                       "voucher",
+                                       "mã giảm",
+                                       "ma giam",
+                                       "discount",
+                                       "quà tặng",
+                                       "qua tang"
+                                   ]
+                  },
+                  {
+                      "reply":  "Đa số mẫu shop có sẵn, giao ngay 📦 Bạn cho shop biết MẪU + SIZE để kiểm tra tồn kho chính xác và chốt đơn nhé!",
+                      "keywords":  [
+                                       "còn hàng",
+                                       "con hang",
+                                       "có sẵn",
+                                       "co san",
+                                       "còn không",
+                                       "con khong",
+                                       "còn ko",
+                                       "hết hàng",
+                                       "het hang",
+                                       "tồn kho",
+                                       "ton kho",
+                                       "còn size",
+                                       "con size"
+                                   ]
+                  },
+                  {
+                      "reply":  "Shop bán trả thẳng + COD (nhận hàng trả tiền) 💳 Mũ giá vừa nên thường không cần trả góp. Nếu muốn, bạn có thể trả góp qua thẻ/ví khi thanh toán trên TikTok Shop nhé!",
+                      "keywords":  [
+                                       "trả góp",
+                                       "tra gop",
+                                       "góp",
+                                       "trả sau",
+                                       "tra sau",
+                                       "installment",
+                                       "trả dần",
+                                       "tra dan"
+                                   ]
+                  },
+                  {
+                      "reply":  "Royal M179 (950.000đ): fullface lật cằm, 2 kính (trong + râm), đệm tháo giặt. Tiện đi phượt + chạy phố. Xem video review trên TikTok shop nhé! 🪖",
+                      "keywords":  [
+                                       "royal",
+                                       "m179"
+                                   ]
+                  },
+                  {
+                      "reply":  "AGU Tem Sói (550.000đ): fullface giá tốt, tem sói ngầu, nhẹ, kính chống UV. Hợp bạn trẻ ngân sách thấp 🐺",
+                      "keywords":  [
+                                       "agu",
+                                       "tem sói",
+                                       "tem soi",
+                                       "sói",
+                                       "soi"
+                                   ]
+                  },
+                  {
+                      "reply":  "Yohe 950 (1.250.000đ): fullface lật hàm 2 kính, form rộng đội kính cận được, hợp đi tour xa 🏍️",
+                      "keywords":  [
+                                       "yohe"
+                                   ]
+                  },
+                  {
+                      "reply":  "Roc R03 (980.000đ): fullface thể thao, nhiều khe gió mát, lót kháng khuẩn. Đáng tiền 💨",
+                      "keywords":  [
+                                       "roc",
+                                       "r03"
+                                   ]
+                  },
+                  {
+                      "reply":  "POC Revo (1.450.000đ): đạt chuẩn ECE 22.05, form nhỏ gọn đội êm, nhẹ, an toàn cao 🛡️",
+                      "keywords":  [
+                                       "poc",
+                                       "revo"
+                                   ]
+                  },
+                  {
+                      "reply":  "LS2 FF320 (2.350.000đ): fullface cao cấp, vỏ siêu bền nhẹ, kính chống tia UV + chống trầy, thông gió tốt, đạt chuẩn ECE. Dành cho biker đi tốc độ cao 🏁",
+                      "keywords":  [
+                                       "ls2",
+                                       "ff320",
+                                       "ff 320"
+                                   ]
+                  },
+                  {
+                      "reply":  "EGO-K 727 (680.000đ): fullface tầm trung, gọn gàng, kính chống chói, đệm êm ôm đầu. Cân đối giá – chất cho đi phố và phượt nhẹ 👍",
+                      "keywords":  [
+                                       "ego",
+                                       "ego-k",
+                                       "ego k",
+                                       "k727",
+                                       "727"
+                                   ]
+                  },
+                  {
+                      "reply":  "Andes 3S6 (380.000đ): mũ 3/4 nửa đầu nhẹ, thoáng mát, có kính phi công chống nắng kéo nhanh. Tiện đi phố hằng ngày, mùa hè đội thoải mái ☀️",
+                      "keywords":  [
+                                       "andes",
+                                       "3s6",
+                                       "andes 3s6",
+                                       "nửa đầu",
+                                       "nua dau",
+                                       "3/4",
+                                       "mũ 3 4",
+                                       "non 3 4"
+                                   ]
+                  },
+                  {
+                      "reply":  "Để chốt đơn, bạn nhắn shop: MẪU + SIZE + SĐT, hoặc bấm TikTok shop chọn trực tiếp 👉 https://www.tiktok.com/@non.dep.102 ạ!",
+                      "keywords":  [
+                                       "mua",
+                                       "đặt",
+                                       "order",
+                                       "chốt",
+                                       "chot",
+                                       "lấy",
+                                       "ship cho",
+                                       "sđt",
+                                       "sdt"
+                                   ]
+                  },
+                  {
+                      "reply":  "Bảng giá: Andes 380k · AGU 550k · EGO-K 680k · Royal M179 950k · Roc R03 980k · Yohe 950 1.250k · POC Revo 1.450k · LS2 FF320 2.350k. Bạn thích mẫu nào ạ? 🪖",
+                      "keywords":  [
+                                       "giá",
+                                       "giá tiền",
+                                       "gia tien",
+                                       "bao nhiêu",
+                                       "bao nhieu",
+                                       "bao nhiu",
+                                       "nhiêu tiền",
+                                       "nhieu tien",
+                                       "nhiu tien",
+                                       "mắc"
+                                   ]
+                  },
+                  {
+                      "reply":  "Dạ cảm ơn bạn nhiều! Cần gì cứ nhắn shop nhé 💚",
+                      "keywords":  [
+                                       "cảm ơn",
+                                       "cam on",
+                                       "cám ơn",
+                                       "thank",
+                                       "oke",
+                                       "okê",
+                                       "okay"
+                                   ]
+                  },
+                  {
+                      "reply":  "Dạ shop nghe! 🪖 Shop Mũ Bảo Hiểm có 8 mẫu (fullface + 3/4). Bạn cần hỏi giá, size, ship hay tư vấn mẫu nào ạ?",
+                      "keywords":  [
+                                       "chào",
+                                       "chao",
+                                       "hello",
+                                       "alo",
+                                       "xin chào",
+                                       "hi ",
+                                       "ê"
+                                   ]
+                  }
+              ],
+    "default":  "Shop chưa rõ ý bạn lắm 😅 Bạn hỏi cụ thể giúp shop nhé (giá / size / ship / màu / chính hãng / đổi trả...), hoặc xem trực tiếp tại TikTok: https://www.tiktok.com/@non.dep.102"
+}

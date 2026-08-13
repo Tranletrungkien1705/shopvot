@@ -1,0 +1,20 @@
+# Minimal compose de chay shop cuc bo: `docker compose up -d --build`
+# Tren server 150, service nay chay trong stack lon /opt/idocnet (cung ten volume).
+services:
+  badminton:
+    build: ./badminton
+    image: shopvot/badminton:latest
+    environment:
+      DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "1"
+    ports:
+      - "5080:8080"
+    volumes:
+      - "badminton-chats:/app/chats"     # lich su chat khach (runtime, khong commit)
+      - "badminton-orders:/app/orders"   # don hang (runtime, khong commit)
+      - "badminton-config:/app/config"   # config song: rules.json chatbot, affiliate...
+    restart: unless-stopped
+
+volumes:
+  badminton-chats: {}
+  badminton-orders: {}
+  badminton-config: {}
