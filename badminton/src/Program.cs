@@ -51,14 +51,14 @@ var opt = new JsonSerializerOptions { WriteIndented = true };
 // Danh mục sản phẩm (mũ bảo hiểm)
 var products = new[]
 {
-    new { id = 1, name = "Mũ Fullface Royal M179 (lật cằm)", brand = "Royal", price = 950000,  img = "/img/h1.jpg", video = "dFWw2p1jQGI", desc = "Mũ fullface lật cằm cao cấp, 2 kính, xốp EPS dày, đệm lót tháo giặt. Đi phượt + chạy phố." },
-    new { id = 2, name = "Mũ Fullface AGU Tem Sói",         brand = "AGU",   price = 550000,  img = "/img/h2.jpg", video = "UsfsHwqJE4U", desc = "Mũ fullface giá tốt, tem sói cá tính, kính chống UV, đệm êm. Hợp bạn trẻ." },
-    new { id = 3, name = "Mũ Fullface Yohe 950 (lật hàm)",   brand = "Yohe",  price = 1250000, img = "/img/h3.jpg", video = "7dbPfpHZE0w", desc = "Fullface lật hàm 2 kính, form rộng đội kính cận được, hợp đi tour." },
-    new { id = 4, name = "Mũ Fullface Roc Helmet R03",       brand = "Roc",   price = 980000,  img = "/img/h4.jpg", video = "Bd5aG09Hy58", desc = "Fullface thể thao, nhiều khe gió mát, lót kháng khuẩn." },
-    new { id = 5, name = "Mũ Fullface POC Revo (ECE 22.05)", brand = "POC",   price = 1450000, img = "/img/h6.jpg", video = "HIVgA7ygiEA", desc = "Đạt chuẩn ECE 22.05, form nhỏ gọn đội êm, nhẹ, an toàn cao." },
-    new { id = 6, name = "Mũ Fullface LS2 FF320 (Racing)",   brand = "LS2",   price = 2350000, img = "/img/h7.jpg", video = "XWmZvy9NWyI", desc = "Fullface cao cấp, vỏ siêu bền nhẹ, kính chống UV, đạt ECE. Cho biker tốc độ cao." },
-    new { id = 7, name = "Mũ Fullface EGO-K 727",            brand = "EGO",   price = 680000,  img = "/img/h8.jpg", video = "D17BZ_oPoyk", desc = "Fullface tầm trung, gọn gàng, kính chống chói, đệm êm." },
-    new { id = 8, name = "Mũ 3/4 Andes 3S6 (nửa đầu)",       brand = "Andes", price = 380000,  img = "/img/h9.jpg", video = "hMYz60WE9qw", desc = "Mũ 3/4 nửa đầu nhẹ, thoáng mát, kính phi công. Tiện đi phố." },
+    new { id = 1, name = "Mũ Fullface Royal M179 (lật cằm)", brand = "Royal", price = 950000,  img = "/img/h1.webp", video = "dFWw2p1jQGI", desc = "Mũ fullface lật cằm cao cấp, 2 kính, xốp EPS dày, đệm lót tháo giặt. Đi phượt + chạy phố." },
+    new { id = 2, name = "Mũ Fullface AGU Tem Sói",         brand = "AGU",   price = 550000,  img = "/img/h2.webp", video = "UsfsHwqJE4U", desc = "Mũ fullface giá tốt, tem sói cá tính, kính chống UV, đệm êm. Hợp bạn trẻ." },
+    new { id = 3, name = "Mũ Fullface Yohe 950 (lật hàm)",   brand = "Yohe",  price = 1250000, img = "/img/h3.webp", video = "7dbPfpHZE0w", desc = "Fullface lật hàm 2 kính, form rộng đội kính cận được, hợp đi tour." },
+    new { id = 4, name = "Mũ Fullface Roc Helmet R03",       brand = "Roc",   price = 980000,  img = "/img/h4.webp", video = "Bd5aG09Hy58", desc = "Fullface thể thao, nhiều khe gió mát, lót kháng khuẩn." },
+    new { id = 5, name = "Mũ Fullface POC Revo (ECE 22.05)", brand = "POC",   price = 1450000, img = "/img/h6.webp", video = "HIVgA7ygiEA", desc = "Đạt chuẩn ECE 22.05, form nhỏ gọn đội êm, nhẹ, an toàn cao." },
+    new { id = 6, name = "Mũ Fullface LS2 FF320 (Racing)",   brand = "LS2",   price = 2350000, img = "/img/h7.webp", video = "XWmZvy9NWyI", desc = "Fullface cao cấp, vỏ siêu bền nhẹ, kính chống UV, đạt ECE. Cho biker tốc độ cao." },
+    new { id = 7, name = "Mũ Fullface EGO-K 727",            brand = "EGO",   price = 680000,  img = "/img/h8.webp", video = "D17BZ_oPoyk", desc = "Fullface tầm trung, gọn gàng, kính chống chói, đệm êm." },
+    new { id = 8, name = "Mũ 3/4 Andes 3S6 (nửa đầu)",       brand = "Andes", price = 380000,  img = "/img/h9.webp", video = "hMYz60WE9qw", desc = "Mũ 3/4 nửa đầu nhẹ, thoáng mát, kính phi công. Tiện đi phố." },
 };
 
 app.MapGet("/api/products", () =>
